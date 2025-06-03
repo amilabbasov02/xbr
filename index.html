@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News Site</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<!-- header -->
+  <header class="site-header">
+    <div class="logo"> <img src="./news-logo.png" alt="Logo"></div>
+
+    <div class="nav">
+      <select class="category-select" aria-label="Choose category">
+        <option value="general" selected>General</option>
+        <option value="business">Business</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="health">Health</option>
+        <option value="science">Science</option>
+        <option value="sports">Sports</option>
+        <option value="technology">Technology</option>
+      </select>
+
+      <nav class="header-nav">
+        <a href="#" class="about-link">About</a>
+        <a href="#" class="contact-link">Contact</a>
+      </nav>
+
+      <form class="search-form">
+        <input type="text" class="search-input" placeholder="Search news..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <div class="news-container"></div>
+
+
+  <div class="info-container"></div>
+
+<!-- modal -->
+  <div class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <img src="" alt="" class="modal-image" />
+      <h2 class="modal-title"></h2>
+      <p class="modal-description"></p>
+      <a href="#" class="modal-url" target="_blank" rel="noopener">Read more</a>
+    </div>
+  </div>
+  <div class="pagination-container">
+    <button id="prev-page" disabled>&laquo; Prev</button>
+    <span id="page-number">1</span>
+    <button id="next-page">Next &raquo;</button>
+  </div>
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <img src="./news-logo.png" alt="Footer Logo" class="footer-logo" />
+        <p>Your trusted news source.</p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#" class="about-link-footer">About Us</a></li>
+          <li><a href="#" class="contact-link-footer">Contact</a></li>
+          <li><a href="#" class="privacy-policy-link">Privacy Policy</a></li>
+          <li><a href="#" class="terms-service-link">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact-info">
+        <h3>Contact Info</h3>
+        <p>Email: support@newssite.com</p>
+        <p>Phone: +994 51 567 68 61</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="./facebook.png"
+              alt="Facebook" />
+          </a>
+          <a href="https://x.com/" target="_blank" rel="noopener"><img src="./x.png" alt="X" /></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="./instagram.png"
+              alt="Instagram" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> NewsSite. All rights reserved.</p>
+      <button id="scroll-top-btn">&#8679;</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
