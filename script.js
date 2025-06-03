@@ -36,15 +36,17 @@ async function fetchAllCategories() {
   const allArticles = [];
 
   for (const cat of categories) {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=${apiKey}&pageSize=20`;
+    const url = `/api/news?category=${category}&page=1&perPage=50`;
     try {
       const res = await fetch(url);
       const data = await res.json();
+      console.log(data);
       if (data.status === 'ok' && data.articles) {
         data.articles.forEach(article => {
           article.category = cat;
           allArticles.push(article);
         });
+        
       }
     } catch (error) {
       console.error(`Error fetching ${cat}:`, error);
@@ -65,9 +67,11 @@ async function fetchNews(category = 'general') {
   currentPage = 1;
 
   try {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}&pageSize=50`;
+    const url = `/api/news?category=${category}&page=1&perPage=50`;
     const res = await fetch(url);
     const data = await res.json();
+    console.log(data);
+    
 
     if (data.status !== 'ok') {
       newsContainer.innerHTML = `<p>Error: ${data.message}</p>`;
